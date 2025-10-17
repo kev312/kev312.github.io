@@ -1,49 +1,49 @@
-/* Fondo general */
+/* ====== ESTILO GENERAL ====== */
 body {
-  background-color: #000000;
-  color: #e0e0e0;
+  background-color: #0d1117; /* Fondo oscuro profesional */
+  color: #c9d1d9;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   margin: 0;
   padding: 40px;
+  line-height: 1.6;
 }
 
-/* Encabezado principal */
+/* ====== ENCABEZADOS ====== */
 h1 {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 40px #00ffff;
-  font-size: 3em;
+  color: #f0f6fc;
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+h2, h3 {
+  color: #58a6ff;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ====== PÁRRAFOS ====== */
+p {
+  color: #8b949e;
+  font-size: 1.2em;
   margin-bottom: 20px;
 }
 
-/* Subtítulos */
-h2, h3 {
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-}
-
-/* Párrafos */
-p {
-  color: #ffffff;
-  font-size: 1.2em;
-  text-shadow: 0 0 5px #ffffff50;
-}
-
-/* Enlaces */
+/* ====== ENLACES ====== */
 a {
-  color: #39ff14;
+  color: #58a6ff;
   text-decoration: none;
-  font-weight: bold;
-  text-shadow: 0 0 5px #39ff14, 0 0 10px #39ff14;
-  transition: all 0.3s ease;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #ff007f;
-  text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f;
+  color: #1f6feb;
+  text-decoration: underline;
 }
 
-/* Listas */
+/* ====== LISTAS ====== */
 ul, ol {
   list-style: none;
   padding: 0;
@@ -52,22 +52,52 @@ ul, ol {
 li {
   margin: 10px 0;
   font-size: 1.1em;
-  color: #00ffff;
-  text-shadow: 0 0 5px #00ffff;
+  color: #d1d5db;
 }
 
-/* Línea de título extra grande (como “Bienvenido a mi web”) */
+/* ====== ÚLTIMO ENCABEZADO DESTACADO ====== */
 h1:last-of-type {
-  color: #ff0099;
-  text-shadow: 0 0 15px #ff0099, 0 0 30px #ff0099, 0 0 60px #ff0099;
+  color: #58a6ff;
+  font-size: 2.5em;
+  margin-top: 60px;
 }
 
-/* Animación de brillo */
-@keyframes glow {
-  0%, 100% { text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff; }
-  50% { text-shadow: 0 0 20px #ff00ff, 0 0 40px #ff00ff; }
+/* ====== SECCIONES ====== */
+section {
+  max-width: 800px;
+  margin: 60px auto;
+  text-align: left;
 }
 
-h1, h2 {
-  animation: glow 2s infinite alternate;
+section h2 {
+  border-left: 4px solid #58a6ff;
+  padding-left: 10px;
+}
+
+/* ====== PIE DE PÁGINA ====== */
+footer {
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #30363d;
+  color: #8b949e;
+  font-size: 0.9em;
+}
+
+/* ====== RESPONSIVO ====== */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  section {
+    padding: 0 15px;
+  }
 }
