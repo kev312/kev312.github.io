@@ -1,52 +1,66 @@
-<!doctype html>
-<html class="no-js" lang="">
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
-  <meta name="description" content="">
-
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-  <meta property="og:image:alt" content="">
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="icon.png">
-
-  <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#fafafa">
+  <meta charset="UTF-8">
+  <title>Mi Web Personal</title>
+  <link rel="icon" type="image/png" href="favicon.ico">   
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
+  <header>
+    <h1>Hola!, bienvenid@ a mi web</h1>
+    <p>Soy Kevin Vivas, estudiante del ciclo: Desarrollo de aplicaciones multiplataforma</p>
+  </header>
 
-<header>
-  <h1>Hola!, bienvenid@ a mi web</h1>
-  <p>Estudiante de Desarrollo de aplicaciones multiplataforma</p>
-</header>
-<section>
-  <h2>Mis proyectos</h2>
-  <ul>
-    <li><a href="https://github.com/kev312/programacion">Programacion</a></li>
-    <li><a href="https://github.com/kev312/lenguajemarcas">Lenguaje de marcas</a></li>
-  </ul>
-<ul>
-  <li>Mis proyectos personales</li>
-    <ol type="a">
-      <li><a href="https://project-kevinv.vercel.app/">Proyecto personal 1 </a></li>
-    </ol>
-</ul>
-</section>
+  <main>
+    <section class="proyectos">
+      <h2>Mis proyectos</h2>
+      <ul>
+        <li><a href="#">Programación</a></li>
+        <li><a href="#">Lenguaje de marcas</a></li>
+        <li><a href="#">Mis proyectos personales</a></li>
+        <li><a href="#">Proyecto personal 1</a></li>
+      </ul>
+    </section>
 
-  <!-- Add your site or application content here -->
-  <h1>Bienvenido a mi web</h1>
+    <section class="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy un apasionado de la informática y el desarrollo de software. 
+        Me encanta resolver problemas, crear soluciones innovadoras y aprender nuevas tecnologías. 
+        En mi tiempo libre disfruto del gaming, la electrónica y la inteligencia artificial.
+      </p>
+      <p>
+        Especialidades: desarrollo web, Java, Python, HTML, CSS, JavaScript, y bases de datos SQL.
+      </p>
+    </section>
 
-  <script src="js/app.js"></script>
+    <!-- Carrusel -->
+    <section class="carrusel">
+      <h2>Proyectos destacados</h2>
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="slide"><a href="https://enlace1.com"><img src="imagen1.jpg" alt="Proyecto 1"></a></div>
+          <div class="slide"><a href="https://enlace2.com"><img src="imagen2.jpg" alt="Proyecto 2"></a></div>
+          <div class="slide"><a href="https://enlace3.com"><img src="imagen3.jpg" alt="Proyecto 3"></a></div>
+        </div>
+      </div>
+    </section>
+  </main>
 
+  <!-- Menú lateral derecho -->
+  <aside class="menu-derecho">
+    <h3>Contacto</h3>
+    <ul>
+      <li><a href="mailto:tucorreo@example.com"> Correo</a></li>
+      <li><a href="https://linkedin.com/in/tuusuario" target="_blank"> LinkedIn</a></li>
+      <li><a href="https://github.com/tuusuario" target="_blank"> GitHub</a></li>
+    </ul>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 | Desarrollado por Kevin Vivas</p>
+  </footer>
 </body>
-
 </html>
