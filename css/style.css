@@ -38,15 +38,15 @@ h1 {
   text-decoration: underline;
 }
 
-/* 🔹 Cuadro "Sobre mí" con animación */
+/* 🔹 Cuadro "Sobre mí" con brillo y alineado con el carrusel */
 .sobre-mi {
-  margin: 20px 400px 20px 80px; /* deja espacio al menú derecho */
+  margin: 20px auto 40px 10%; /* alineado con el carrusel, margen izquierdo igual */
   background: #1b222c;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 0 20px #5aa0ff55;
   line-height: 1.6;
-  max-width: 750px;
+  max-width: 700px; /* sigue siendo más estrecho que el carrusel */
   position: relative;
   overflow: hidden;
 }
@@ -86,8 +86,8 @@ h1 {
 }
 
 .carousel-container {
-  width: 80%;
-  margin: auto;
+  width: 80%; /* el carrusel ocupa más ancho */
+  margin-left: 10%; /* igual que el sobre-mi para alinear */
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 0 20px #5aa0ff66;
@@ -149,6 +149,7 @@ h1 {
   color: #ffffff;
 }
 
+/* 🔹 Footer */
 footer {
   text-align: center;
   padding: 20px;
@@ -162,6 +163,11 @@ footer {
   .sobre-mi {
     margin: 20px;
     max-width: 100%;
+  }
+
+  .carousel-container {
+    width: 90%;
+    margin: 0 auto;
   }
 
   .menu-derecho {
