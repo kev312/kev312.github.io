@@ -2,60 +2,313 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi Web Personal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kevin Vivas | Desarrollador Multiplataforma</title>
+  <meta name="description" content="Portafolio profesional de Kevin Vivas, estudiante de Desarrollo de Aplicaciones Multiplataforma. Proyectos, habilidades y contacto.">
+  
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="favicon.ico">   
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  
+  <!-- Fonts & Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            'inter': ['Inter', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0f172a; /* Slate 900 */
+      color: #e2e8f0; /* Slate 200 */
+    }
+    
+    /* Scrollbar personalizada */
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: #1e293b; }
+    ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #6366f1; }
+
+    /* Carrusel estilo scroll-snap */
+    .carousel-container {
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+    }
+    .carousel-container::-webkit-scrollbar { display: none; }
+    
+    .slide {
+      scroll-snap-align: center;
+      flex-shrink: 0;
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <h1>Hola!, bienvenid@ a mi web</h1>
-    <p>Soy Kevin Vivas, estudiante del ciclo: Desarrollo de aplicaciones multiplataforma</p>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header / Hero Section -->
+  <header class="relative bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 py-20 px-6 text-center border-b border-slate-800 overflow-hidden">
+    <!-- Decorative background blobs -->
+    <div class="absolute top-0 left-1/4 w-72 h-72 bg-indigo-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+    <div class="absolute bottom-0 right-1/4 w-72 h-72 bg-purple-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+    
+    <div class="relative z-10 max-w-4xl mx-auto">
+      <div class="mb-6 inline-block p-3 bg-indigo-500/10 rounded-full border border-indigo-500/30">
+        <i class="fas fa-laptop-code text-4xl text-indigo-400"></i>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight">
+        Hola, soy <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Kevin Vivas</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">
+        Estudiante de <span class="text-white font-semibold">Desarrollo de Aplicaciones Multiplataforma</span> & Apasionado por la tecnología.
+      </p>
+      
+      <!-- Action Buttons -->
+      <div class="mt-8 flex justify-center gap-4 flex-wrap">
+        <a href="#proyectos" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg font-medium transition-all shadow-lg shadow-indigo-500/30 hover:scale-105">
+          <i class="fas fa-rocket mr-2"></i> Ver Proyectos
+        </a>
+        <a href="#contacto" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg font-medium border border-slate-700 transition-all hover:scale-105">
+          <i class="fas fa-envelope mr-2"></i> Contactar
+        </a>
+      </div>
+    </div>
   </header>
 
-  <main>
-    <section class="proyectos">
-      <h2>Mis proyectos </h2>
-      <ul>
-        <li><a href="https://github.com/kev312/programacion">Programación</a></li>
-        <li><a href="https://github.com/kev312/lenguajemarcas">Lenguaje de marcas</a></li>
-      </ul>
-    </section>
+  <!-- Main Layout -->
+  <div class="flex-1 container mx-auto px-4 py-12">
+    <div class="flex flex-col lg:flex-row gap-8">
+      
+      <!-- Main Content -->
+      <main class="flex-1 space-y-12">
+        
+        <!-- About Me -->
+        <section id="sobre-mi" class="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 backdrop-blur-sm">
+          <div class="flex items-center gap-3 mb-6">
+            <i class="fas fa-user-astronaut text-2xl text-indigo-400"></i>
+            <h2 class="text-2xl font-bold text-white">Sobre Mí</h2>
+          </div>
+          <div class="space-y-4 text-slate-300 leading-relaxed">
+            <p>
+              Soy un apasionado de la informática y el desarrollo de software. Me encanta resolver problemas, crear soluciones innovadoras y aprender nuevas tecnologías constantemente.
+            </p>
+            <p>
+              En mi tiempo libre disfruto experimentando con electrónica, inteligencia artificial y nuevas tendencias tecnológicas.
+            </p>
+            <div class="pt-4 border-t border-slate-700">
+              <h3 class="text-sm font-semibold text-indigo-300 uppercase tracking-wider mb-3">Habilidades Técnicas</h3>
+              <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1 bg-slate-900 text-indigo-300 rounded-full text-sm border border-indigo-500/30">Java</span>
+                <span class="px-3 py-1 bg-slate-900 text-cyan-300 rounded-full text-sm border border-cyan-500/30">HTML/CSS</span>
+                <span class="px-3 py-1 bg-slate-900 text-yellow-300 rounded-full text-sm border border-yellow-500/30">JavaScript</span>
+                <span class="px-3 py-1 bg-slate-900 text-blue-300 rounded-full text-sm border border-blue-500/30">SQL</span>
+                <span class="px-3 py-1 bg-slate-900 text-green-300 rounded-full text-sm border border-green-500/30">Sistemas Operativos</span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <section class="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>
-        Soy un apasionado de la informática y el desarrollo de software. 
-        Me encanta resolver problemas, crear soluciones innovadoras y aprender nuevas tecnologías. 
-        En mi tiempo libre disfruto de innovar con las nuevas tecnologias , la electrónica y la inteligencia artificial.
-      </p>
-      <p>
-        Especialidades: desarrollo web, Java, Sistemas Operativos, HTML, CSS, JavaScript, y bases de datos SQL.
-      </p>
-    </section>
-    <section class="carrusel">
-      <h2>Proyectos personales</h2>
-      <div class="carousel-container">
-        <div class="carousel">
-          <div class="slide"><a href="https://starwars-kevinv.vercel.app/"><img src="img/starwars.jpg" alt="Proyecto 1"></a></div>
-          <div class="slide"><a href="https://project-kevinv.vercel.app/"><img src="img/dbz.jpg" alt="Proyecto 2"></a></div>
-          <div class="slide"><a href="https://decadencia-juego.vercel.app/"><img src="img/bolas.jpg" alt="Proyecto 3"></a></div>
-          <div class="slide"><a href="https://tienda-blond-seven.vercel.app/"><img src="img/logo.png" alt="Proyecto 4"></a></div>
-          <div class="slide"><a href="https://kevinv-project-snake.vercel.app/"><img src="img/snake.png" alt="Proyecto 5"></a></div>
-          <div class="slide"><a href="https://ruleta-kappa.vercel.app/"><img src="img/rule.png" alt="Proyecto 6"></a></div>
+        <!-- GitHub Repos -->
+        <section id="proyectos" class="bg-slate-800/50 border border-slate-700 rounded-2xl p-8">
+          <div class="flex items-center gap-3 mb-6">
+            <i class="fab fa-github text-2xl text-white"></i>
+            <h2 class="text-2xl font-bold text-white">Repositorios Académicos</h2>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Repo Card 1 -->
+            <a href="https://github.com/kev312/programacion" target="_blank" class="group block p-6 bg-slate-900 rounded-xl border border-slate-700 hover:border-indigo-500 transition-all hover:shadow-lg hover:shadow-indigo-500/10">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">Programación</h3>
+                <i class="fas fa-external-link-alt text-slate-600 group-hover:text-indigo-400 text-sm"></i>
+              </div>
+              <p class="text-slate-400 text-sm">Ejercicios y proyectos del módulo de programación.</p>
+              <div class="mt-4 flex items-center text-xs text-slate-500">
+                <span class="w-3 h-3 rounded-full bg-orange-500 mr-2"></span> Java
+              </div>
+            </a>
+            <!-- Repo Card 2 -->
+            <a href="https://github.com/kev312/lenguajemarcas" target="_blank" class="group block p-6 bg-slate-900 rounded-xl border border-slate-700 hover:border-indigo-500 transition-all hover:shadow-lg hover:shadow-indigo-500/10">
+              <div class="flex justify-between items-start mb-3">
+                <h3 class="text-lg font-bold text-white group-hover:text-indigo-400 transition-colors">Lenguaje de Marcas</h3>
+                <i class="fas fa-external-link-alt text-slate-600 group-hover:text-indigo-400 text-sm"></i>
+              </div>
+              <p class="text-slate-400 text-sm">Prácticas de XML, HTML, CSS y más.</p>
+              <div class="mt-4 flex items-center text-xs text-slate-500">
+                <span class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></span> HTML / CSS
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- Carousel Projects -->
+        <section class="bg-slate-800/50 border border-slate-700 rounded-2xl p-8">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <i class="fas fa-images text-2xl text-indigo-400"></i>
+              <h2 class="text-2xl font-bold text-white">Proyectos Personales</h2>
+            </div>
+            <!-- Carousel Navigation -->
+            <div class="flex gap-2">
+              <button id="prevBtn" class="p-2 bg-slate-700 hover:bg-indigo-600 rounded-full transition-colors text-white">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button id="nextBtn" class="p-2 bg-slate-700 hover:bg-indigo-600 rounded-full transition-colors text-white">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+          
+          <!-- Carousel Container -->
+          <div id="carousel" class="carousel-container flex overflow-x-auto gap-6 pb-4 scroll-smooth">
+            
+            <!-- Slide 1 -->
+            <div class="slide w-72 h-44 rounded-xl overflow-hidden relative group flex-shrink-0 border border-slate-700 shadow-lg">
+              <img src="img/starwars.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Proyecto Star Wars">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                <a href="https://starwars-kevinv.vercel.app/" target="_blank" class="text-white font-bold hover:text-indigo-300 transition-colors">
+                  <i class="fas fa-link mr-2"></i> Star Wars Web
+                </a>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide w-72 h-44 rounded-xl overflow-hidden relative group flex-shrink-0 border border-slate-700 shadow-lg">
+              <img src="img/dbz.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Proyecto DBZ">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                <a href="https://project-kevinv.vercel.app/" target="_blank" class="text-white font-bold hover:text-indigo-300 transition-colors">
+                  <i class="fas fa-link mr-2"></i> DBZ Project
+                </a>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide w-72 h-44 rounded-xl overflow-hidden relative group flex-shrink-0 border border-slate-700 shadow-lg">
+              <img src="img/bolas.jpg" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" alt="Proyecto Decadencia">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                <a href="https://decadencia-juego.vercel.app/" target="_blank" class="text-white font-bold hover:text-indigo-300 transition-colors">
+                  <i class="fas fa-link mr-2"></i> Juego Decadencia
+                </a>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide w-72 h-44 rounded-xl overflow-hidden relative group flex-shrink-0 border border-slate-700 shadow-lg">
+              <img src="img/logo.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 bg-slate-900" alt="Tienda Blond">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                <a href="https://tienda-blond-seven.vercel.app/" target="_blank" class="text-white font-bold hover:text-indigo-300 transition-colors">
+                  <i class="fas fa-link mr-2"></i> Tienda Blond
+                </a>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="slide w-72 h-44 rounded-xl overflow-hidden relative group flex-shrink-0 border border-slate-700 shadow-lg">
+              <img src="img/snake.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 bg-slate-900" alt="Juego Snake">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                <a href="https://kevinv-project-snake.vercel.app/" target="_blank" class="text-white font-bold hover:text-indigo-300 transition-colors">
+                  <i class="fas fa-link mr-2"></i> Snake Game
+                </a>
+              </div>
+            </div>
+
+            <!-- Slide 6 -->
+            <div class="slide w-72 h-44 rounded-xl overflow-hidden relative group flex-shrink-0 border border-slate-700 shadow-lg">
+              <img src="img/rule.png" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 bg-slate-900" alt="Ruleta">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex items-end p-4">
+                <a href="https://ruleta-kappa.vercel.app/" target="_blank" class="text-white font-bold hover:text-indigo-300 transition-colors">
+                  <i class="fas fa-link mr-2"></i> Ruleta App
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+
+      <!-- Sidebar (Contact) -->
+      <aside id="contacto" class="w-full lg:w-80 flex-shrink-0">
+        <div class="sticky top-8 space-y-6">
+          <div class="bg-slate-800/50 border border-slate-700 rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+              <i class="fas fa-paper-plane text-indigo-400"></i> Contacto
+            </h3>
+            <ul class="space-y-4">
+              <li>
+                <a href="mailto:vivask69@gmail.com" class="flex items-center gap-4 p-3 bg-slate-900 rounded-lg hover:bg-indigo-600 transition-colors group">
+                  <span class="w-10 h-10 bg-slate-700 group-hover:bg-indigo-500 rounded-full flex items-center justify-center transition-colors">
+                    <i class="fas fa-envelope text-white"></i>
+                  </span>
+                  <div>
+                    <span class="text-xs text-slate-400 block">Email</span>
+                    <span class="text-white font-medium text-sm">Escríbeme</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/tuusuario" target="_blank" class="flex items-center gap-4 p-3 bg-slate-900 rounded-lg hover:bg-blue-600 transition-colors group">
+                  <span class="w-10 h-10 bg-slate-700 group-hover:bg-blue-500 rounded-full flex items-center justify-center transition-colors">
+                    <i class="fab fa-linkedin-in text-white"></i>
+                  </span>
+                  <div>
+                    <span class="text-xs text-slate-400 block">LinkedIn</span>
+                    <span class="text-white font-medium text-sm">Conectemos</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/kev312" target="_blank" class="flex items-center gap-4 p-3 bg-slate-900 rounded-lg hover:bg-slate-600 transition-colors group">
+                  <span class="w-10 h-10 bg-slate-700 group-hover:bg-slate-800 rounded-full flex items-center justify-center transition-colors">
+                    <i class="fab fa-github text-white"></i>
+                  </span>
+                  <div>
+                    <span class="text-xs text-slate-400 block">GitHub</span>
+                    <span class="text-white font-medium text-sm">kev312</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <!-- Small CV Download or extra info could go here -->
+          <div class="text-center text-xs text-slate-500 hidden lg:block">
+            <p>Desarrollado con <i class="fas fa-heart text-red-500"></i> y mucho código.</p>
+          </div>
         </div>
-      </div>
-    </section>
-  </main>
-  <aside class="menu-derecho">
-    <h3>Contacto</h3>
-    <ul>
-      <li><a href="mailto:vivask69@gmail.com"> Correo</a></li>
-      <li><a href="https://linkedin.com/in/tuusuario" target="_blank"> LinkedIn</a></li>
-      <li><a href="https://github.com/kev312" target="_blank"> GitHub</a></li>
-    </ul>
-  </aside>
-  <footer>
-    <p>© 2025 | Desarrollado por Kevin Vivas</p>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800 bg-slate-900/50 py-6 mt-12">
+    <div class="container mx-auto px-4 text-center text-slate-500 text-sm">
+      <p>© 2025 Kevin Vivas | Todos los derechos reservados</p>
+    </div>
   </footer>
+
+  <!-- Minimal Script for Carousel -->
+  <script>
+    const carousel = document.getElementById('carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const scrollAmount = 300; // Width of card + gap
+
+    prevBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  </script>
 </body>
 </html>
