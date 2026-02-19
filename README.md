@@ -1,4 +1,4 @@
-# Bienvenido a mis codigos de mi pagina personal
+# Bienvenido a la sección de desarrollo de mi pagina personal
 ## Contenidos
 ![Desarrollo Aplicaciones Multiplataforma](img/dam.png)   
 Aquí los repositorios complementarios a mi sitio web
